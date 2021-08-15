@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LPG2.Runtime", "LPG2.Runtime\LPG2.Runtime.csproj", "{DE82CD13-4C94-40B7-90A4-BD1910D0CD04}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LpgExample", "LpgExample\LpgExample.csproj", "{B12D5CEE-9DE8-4DE2-A3E2-D5560A25D3C9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JavaExample", "JavaExample\JavaExample.csproj", "{3B9FF882-D2FD-4121-9206-01B92C049754}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{DE82CD13-4C94-40B7-90A4-BD1910D0CD04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE82CD13-4C94-40B7-90A4-BD1910D0CD04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE82CD13-4C94-40B7-90A4-BD1910D0CD04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B12D5CEE-9DE8-4DE2-A3E2-D5560A25D3C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B12D5CEE-9DE8-4DE2-A3E2-D5560A25D3C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B12D5CEE-9DE8-4DE2-A3E2-D5560A25D3C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B12D5CEE-9DE8-4DE2-A3E2-D5560A25D3C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B9FF882-D2FD-4121-9206-01B92C049754}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B9FF882-D2FD-4121-9206-01B92C049754}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B9FF882-D2FD-4121-9206-01B92C049754}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B9FF882-D2FD-4121-9206-01B92C049754}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
