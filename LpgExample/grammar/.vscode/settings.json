@@ -1,0 +1,8 @@
+{
+    "lpg.generation.setting": {
+        
+         "built_in_template": "csharp",
+         "mode":"external",
+         "outputDir": "../"
+    }
+}
