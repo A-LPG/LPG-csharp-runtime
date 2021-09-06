@@ -522,7 +522,7 @@ public abstract class AbstractResultVisitor : ResultVisitor, ResultArgumentVisit
         else if (n is start_symbol1) return visit((start_symbol1) n, o);
         else if (n is terminal_symbol0) return visit((terminal_symbol0) n, o);
         else if (n is terminal_symbol1) return visit((terminal_symbol1) n, o);
-        throw new System.NotSupportedException("visit(" + n.GetType().ToString() + ")");
+        else throw new System.NotSupportedException("visit(" + n.GetType().ToString() + ")");
     }
 }
 }

@@ -25254,7 +25254,7 @@ public class JavaParser : object , RuleAction
             else if (n is AssignmentOperator9) return visit((AssignmentOperator9) n);
             else if (n is AssignmentOperator10) return visit((AssignmentOperator10) n);
             else if (n is AssignmentOperator11) return visit((AssignmentOperator11) n);
-            throw new System.NotSupportedException("visit(" + n.GetType().ToString() + ")");
+            else throw new System.NotSupportedException("visit(" + n.GetType().ToString() + ")");
         }
         public object visit(Ast n, object o)
         {
@@ -25527,7 +25527,7 @@ public class JavaParser : object , RuleAction
             else if (n is AssignmentOperator9) return visit((AssignmentOperator9) n, o);
             else if (n is AssignmentOperator10) return visit((AssignmentOperator10) n, o);
             else if (n is AssignmentOperator11) return visit((AssignmentOperator11) n, o);
-            throw new System.NotSupportedException("visit(" + n.GetType().ToString() + ")");
+            else throw new System.NotSupportedException("visit(" + n.GetType().ToString() + ")");
         }
     }
 
