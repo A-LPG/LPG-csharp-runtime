@@ -18,7 +18,7 @@ The LALR parser generator ([LPG]( https://github.com/A-LPG/LPG2 )) is a tool for
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Copyright>https://github.com/A-LPG/LPG-csharp-runtime/blob/main/LICENSE</Copyright>
     <PackageTags>LPG</PackageTags>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>

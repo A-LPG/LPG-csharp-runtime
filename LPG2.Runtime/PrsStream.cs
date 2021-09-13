@@ -245,7 +245,7 @@ namespace LPG2.Runtime
 
     public virtual   int getColumnOfCharAt(int i)
     {
-        return getColumnOfCharAt(i);
+        return iLexStream.getColumnOfCharAt(i);
     }
 
     /**
