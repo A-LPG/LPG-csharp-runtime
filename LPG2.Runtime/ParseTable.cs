@@ -100,5 +100,12 @@ namespace LPG2.Runtime
         public bool isValidForParser();
 
         public bool getBacktrack();
+
+        //
+        // Map a nonterminal token kind (NT_OFFSET already applied) to a compact
+        // slot in RuleAction.getProstheticAst(). Tables generated for grammars
+        // without %Recover symbols use this default, which selects slot 0.
+        //
+        public int getProsthesisIndex(int index) { return 0; }
     }
 }

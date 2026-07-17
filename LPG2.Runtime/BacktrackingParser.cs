@@ -400,8 +400,26 @@ public class BacktrackingParser : Stacks
             {
                 if (tokStream.getKind(curtok) > NT_OFFSET) 
                 {
-                    ErrorToken badtok = (ErrorToken) ((PrsStream) tokStream).getIToken(curtok);
-                    throw new BadParseException(badtok.getErrorToken().getTokenIndex()); // parseStack[stateStackTop] = ra.prostheticAst[prs.getProsthesisIndex(tokStream.getKind(curtok))].create(tokStream.getIToken(curtok));
+                    //
+                    // A replayed nonterminal ErrorToken (inserted by scope
+                    // recovery). If the RuleAction supplies prosthetic-AST
+                    // factories, synthesize a placeholder node; otherwise keep
+                    // the historical behavior of throwing a BadParseException.
+                    //
+                    ProstheticAst[] prostheticAst = ra.getProstheticAst();
+                    ProstheticAst prosthesis = null;
+                    if (prostheticAst != null)
+                    {
+                        int slot = prs.getProsthesisIndex(tokStream.getKind(curtok));
+                        if (slot >= 0 && slot < prostheticAst.Length)
+                            prosthesis = prostheticAst[slot];
+                    }
+                    if (prosthesis == null)
+                    {
+                        ErrorToken badtok = (ErrorToken) ((PrsStream) tokStream).getIToken(curtok);
+                        throw new BadParseException(badtok.getErrorToken().getTokenIndex());
+                    }
+                    parseStack[stateStackTop] = prosthesis(((PrsStream) tokStream).getIToken(curtok));
                 }
                 lastToken = curtok;
                 curtok = tokens.get(++ti);
