@@ -71,6 +71,10 @@ public class JavaKWLexerprs : LPG2.Runtime.ParseTable, JavaKWLexersym {
 
     public const bool BACKTRACK = false;
     public  bool getBacktrack() { return BACKTRACK; }
+    public  bool isGLR() { return false; }
+
+    public  int getProsthesisIndex(int index) { return 0; }
+
 
     public   int getStartSymbol() { return lhs(0); }
     public   bool isValidForParser() { return JavaKWLexersym.isValidForParser; }

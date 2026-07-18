@@ -11,6 +11,7 @@ using System;
 public abstract class ASTNode : IAst
 {
     public IAst getNextAst() { return null; }
+    public void setNextAst(IAst n) { }
     protected IToken leftIToken,
                      rightIToken;
     protected IAst parent = null;

@@ -1,20 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
-
 namespace LPG2.Runtime
 {
     public interface IAst
     {
-        public IAst getNextAst();
-        public void setNextAst(IAst n) { }
-        public IAst getParent();
-        public IToken getLeftIToken();
-        public IToken getRightIToken();
-        public IToken[] getPrecedingAdjuncts();
-        public IToken[] getFollowingAdjuncts();
-        public System.Collections.ArrayList getChildren();
-        public System.Collections.ArrayList getAllChildren();
-        public void accept(IAstVisitor v);
+        IAst getNextAst();
+        void setNextAst(IAst n);
+        IAst getParent();
+        IToken getLeftIToken();
+        IToken getRightIToken();
+        IToken[] getPrecedingAdjuncts();
+        IToken[] getFollowingAdjuncts();
+        System.Collections.ArrayList getChildren();
+        System.Collections.ArrayList getAllChildren();
+        void accept(IAstVisitor v);
     }
 
     

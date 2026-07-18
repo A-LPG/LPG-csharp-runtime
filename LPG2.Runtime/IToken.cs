@@ -3,50 +3,53 @@ namespace LPG2.Runtime
 
     public interface IToken
     {
-        public    const char EOF = '\uffff';
+        int getKind();
+        void setKind(int kind);
 
-        public int getKind();
-        public void setKind(int kind);
+        int getStartOffset();
+        void setStartOffset(int startOffset);
 
-        public int getStartOffset();
-        public void setStartOffset(int startOffset);
+        int getEndOffset();
+        void setEndOffset(int endOffset);
 
-        public int getEndOffset();
-        public void setEndOffset(int endOffset);
+        int getTokenIndex();
+        void setTokenIndex(int i);
 
-        public int getTokenIndex();
-        public void setTokenIndex(int i);
+        int getAdjunctIndex();
+        void setAdjunctIndex(int i);
 
-        public int getAdjunctIndex();
-        public void setAdjunctIndex(int i);
+        IToken[] getPrecedingAdjuncts();
+        IToken[] getFollowingAdjuncts();
 
-        public  IToken[] getPrecedingAdjuncts();
-        public  IToken[] getFollowingAdjuncts();
-
-        public ILexStream getILexStream();
+        ILexStream getILexStream();
 
         /**
      * @deprecated replaced by {@link #getILexStream()}
      */
-        public ILexStream getLexStream();
+        ILexStream getLexStream();
 
-        public IPrsStream getIPrsStream();
+        IPrsStream getIPrsStream();
 
         /**
      * @deprecated replaced by {@link #getIPrsStream()}
      */
-        public IPrsStream getPrsStream();
+        IPrsStream getPrsStream();
 
-        public int getLine();
-        public int getColumn();
-        public int getEndLine();
-        public int getEndColumn();
+        int getLine();
+        int getColumn();
+        int getEndLine();
+        int getEndColumn();
 
         /**
      * @deprecated replaced by ToString()
      */
-        public abstract string getValue(char[] inputChars);
+        string getValue(char[] inputChars);
 
      
+    }
+
+    public static class TokenConstants
+    {
+        public const char EOF = '\uffff';
     }
 }

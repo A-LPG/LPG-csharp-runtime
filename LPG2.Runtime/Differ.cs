@@ -13,13 +13,13 @@ namespace LPG2.Runtime
         //
         public interface ILine
         {
-            public abstract int GetHashCode();
-            public abstract bool Equals(object anObject);
-            public abstract int size();
-            public abstract int getStartLine();
-            public abstract int getStartColumn();
-            public abstract int getEndLine();
-            public abstract int getEndColumn();
+            int GetHashCode();
+            bool Equals(object anObject);
+            int size();
+            int getStartLine();
+            int getStartColumn();
+            int getEndLine();
+            int getEndColumn();
         }
 
         public static string GetString(byte[] buf, int start, int len)

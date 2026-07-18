@@ -3,115 +3,116 @@ namespace LPG2.Runtime
 
     public interface ParseTable
     {
-        public int baseCheck(int index);
+        int baseCheck(int index);
 
-        public int rhs(int index);
+        int rhs(int index);
 
-        public int baseAction(int index);
+        int baseAction(int index);
 
-        public int lhs(int index);
+        int lhs(int index);
 
-        public int termCheck(int index);
+        int termCheck(int index);
 
-        public int termAction(int index);
+        int termAction(int index);
 
-        public int asb(int index);
+        int asb(int index);
 
-        public int asr(int index);
+        int asr(int index);
 
-        public int nasb(int index);
+        int nasb(int index);
 
-        public int nasr(int index);
+        int nasr(int index);
 
-        public int terminalIndex(int index);
+        int terminalIndex(int index);
 
-        public int nonterminalIndex(int index);
+        int nonterminalIndex(int index);
 
-        public int scopePrefix(int index);
+        int scopePrefix(int index);
 
-        public int scopeSuffix(int index);
+        int scopeSuffix(int index);
 
-        public int scopeLhs(int index);
+        int scopeLhs(int index);
 
-        public int scopeLa(int index);
+        int scopeLa(int index);
 
-        public int scopeStateSet(int index);
+        int scopeStateSet(int index);
 
-        public int scopeRhs(int index);
+        int scopeRhs(int index);
 
-        public int scopeState(int index);
+        int scopeState(int index);
 
-        public int inSymb(int index);
+        int inSymb(int index);
 
-        public string name(int index);
+        string name(int index);
 
-        public int originalState(int state);
+        int originalState(int state);
 
-        public int asi(int state);
+        int asi(int state);
 
-        public int nasi(int state);
+        int nasi(int state);
 
-        public int inSymbol(int state);
+        int inSymbol(int state);
 
-        public int ntAction(int state, int sym);
+        int ntAction(int state, int sym);
 
-        public int tAction(int act, int sym);
+        int tAction(int act, int sym);
 
-        public int lookAhead(int act, int sym);
+        int lookAhead(int act, int sym);
 
-        public int getErrorSymbol();
+        int getErrorSymbol();
 
-        public int getScopeUbound();
+        int getScopeUbound();
 
-        public int getScopeSize();
+        int getScopeSize();
 
-        public int getMaxNameLength();
+        int getMaxNameLength();
 
-        public int getNumStates();
+        int getNumStates();
 
-        public int getNtOffset();
+        int getNtOffset();
 
-        public int getLaStateOffset();
+        int getLaStateOffset();
 
-        public int getMaxLa();
+        int getMaxLa();
 
-        public int getNumRules();
+        int getNumRules();
 
-        public int getNumNonterminals();
+        int getNumNonterminals();
 
-        public int getNumSymbols();
+        int getNumSymbols();
 
-        public int getSegmentSize();
+        int getSegmentSize();
 
-        public int getStartState();
+        int getStartState();
 
-        public int getStartSymbol();
+        int getStartSymbol();
 
-        public int getEoftSymbol();
+        int getEoftSymbol();
 
-        public int getEoltSymbol();
+        int getEoltSymbol();
 
-        public int getAcceptAction();
+        int getAcceptAction();
 
-        public int getErrorAction();
+        int getErrorAction();
 
-        public bool isNullable(int symbol);
+        bool isNullable(int symbol);
 
-        public bool isValidForParser();
+        bool isValidForParser();
 
-        public bool getBacktrack();
+        bool getBacktrack();
 
         //
-        // True when the table was generated with -glr. Non-GLR tables omit
-        // the override and retain this default.
+        // True when the table was generated with -glr. Generated *prs always
+        // emit an override (false for non-GLR tables) so netstandard2.0 builds
+        // do not rely on default interface implementations.
         //
-        public bool isGLR() { return false; }
+        bool isGLR();
 
         //
         // Map a nonterminal token kind (NT_OFFSET already applied) to a compact
-        // slot in RuleAction.getProstheticAst(). Tables generated for grammars
-        // without %Recover symbols use this default, which selects slot 0.
+        // slot in RuleAction.getProstheticAst(). Generated tables always emit
+        // an override (returns 0 when the grammar has no %Recover symbols).
         //
-        public int getProsthesisIndex(int index) { return 0; }
+        int getProsthesisIndex(int index);
     }
 }

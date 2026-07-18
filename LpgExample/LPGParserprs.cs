@@ -58,6 +58,10 @@ public class LPGParserprs : LPG2.Runtime.ParseTable, LPGParsersym {
 
     public const bool BACKTRACK = false;
     public  bool getBacktrack() { return BACKTRACK; }
+    public  bool isGLR() { return false; }
+
+    public  int getProsthesisIndex(int index) { return 0; }
+
 
     public   int getStartSymbol() { return lhs(0); }
     public   bool isValidForParser() { return LPGParsersym.isValidForParser; }

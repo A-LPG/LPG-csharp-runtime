@@ -1848,12 +1848,14 @@ namespace LPG2.Runtime
             // the algorithm assumes that it can "peek" at the symbol immediately
             // following the one that is being analysed.
             //
-            string s1 = (new string(name(terminalIndex(sym)))).ToLower();
+            // name()/getName() already return string; avoid new string(...) which
+            // binds to the unsafe char* ctor on netstandard2.0.
+            string s1 = name(terminalIndex(sym)).ToLower();
 
             int n = s1.Length;
             s1 += '\u0000';
 
-            string s2 = (new string(tokStream.getName(tok))).ToLower();
+            string s2 = tokStream.getName(tok).ToLower();
             int m = (s2.Length < MAX_NAME_LENGTH ? s2.Length : MAX_NAME_LENGTH);
             s2 = s2.Substring(0, m) + '\u0000';
             

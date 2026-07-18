@@ -265,6 +265,7 @@ public class JavaParser : object , RuleAction
     public abstract class Ast : IAst
     {
         public IAst getNextAst() { return null; }
+    public void setNextAst(IAst n) { }
         protected IToken leftIToken,
                          rightIToken;
         protected IAst parent = null;
@@ -25532,6 +25533,11 @@ public class JavaParser : object , RuleAction
     }
 
     //#line 326 "dtParserTemplateF.gi
+
+    
+    public ProstheticAst[] getProstheticAst() { return null; }
+    public void setRecoverParser(BacktrackingParser parser) { }
+    public BacktrackingParser getRecoverParser() { return null; }
 
     public void ruleAction(int ruleNumber)
     {

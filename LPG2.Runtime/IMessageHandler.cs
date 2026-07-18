@@ -8,21 +8,6 @@ namespace LPG2.Runtime
     public interface IMessageHandler
     {
         /**
-     * The following constants can be used as indexes to dereference
-     * values in the msgLocation and errorLocation arrays.
-     * 
-     * Locations are constructed by the method getLocation in LexStream which
-     * takes two arguments: a start and an end location and returns an array
-     * of 6 integers.
-     */
-      static  int OFFSET_INDEX = 0,
-            LENGTH_INDEX = 1,
-            START_LINE_INDEX = 2,
-            START_COLUMN_INDEX = 3,
-            END_LINE_INDEX = 4,
-            END_COLUMN_INDEX = 5;
-
-        /**
      * 
      * When a location is undefined, the value of its offset is 0.
      * 
@@ -34,5 +19,19 @@ namespace LPG2.Runtime
      */
         void handleMessage(int errorCode, int[] msgLocation, int[] errorLocation, string filename, 
             string[] errorInfo);
+    }
+
+    /**
+     * Indexes into the 6-int location arrays produced by LexStream.getLocation.
+     * Kept as a static class (not interface fields) for netstandard2.0.
+     */
+    public static class MessageHandlerLocation
+    {
+        public const int OFFSET_INDEX = 0;
+        public const int LENGTH_INDEX = 1;
+        public const int START_LINE_INDEX = 2;
+        public const int START_COLUMN_INDEX = 3;
+        public const int END_LINE_INDEX = 4;
+        public const int END_COLUMN_INDEX = 5;
     }
 }

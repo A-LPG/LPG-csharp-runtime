@@ -411,6 +411,11 @@ public class JavaLexer : object , RuleAction
 
     //#line 268 "LexerTemplateF.gi
 
+    
+    public ProstheticAst[] getProstheticAst() { return null; }
+    public void setRecoverParser(BacktrackingParser parser) { }
+    public BacktrackingParser getRecoverParser() { return null; }
+
     public void ruleAction(int ruleNumber)
     {
         switch(ruleNumber)
