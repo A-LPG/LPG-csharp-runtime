@@ -6,6 +6,7 @@ namespace LPG2.Runtime
     public interface IAst
     {
         public IAst getNextAst();
+        public void setNextAst(IAst n) { }
         public IAst getParent();
         public IToken getLeftIToken();
         public IToken getRightIToken();

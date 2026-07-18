@@ -13,5 +13,12 @@ namespace LPG2.Runtime
         // nonterminal token.
         //
         ProstheticAst[] getProstheticAst() { return null; }
+
+        //
+        // GLR parsers that fall back to BacktrackingParser for %Recover replay
+        // override these so generated span/symbol accessors use the BT stacks.
+        //
+        void setRecoverParser(BacktrackingParser parser) { }
+        BacktrackingParser getRecoverParser() { return null; }
     }
 }

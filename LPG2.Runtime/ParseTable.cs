@@ -102,6 +102,12 @@ namespace LPG2.Runtime
         public bool getBacktrack();
 
         //
+        // True when the table was generated with -glr. Non-GLR tables omit
+        // the override and retain this default.
+        //
+        public bool isGLR() { return false; }
+
+        //
         // Map a nonterminal token kind (NT_OFFSET already applied) to a compact
         // slot in RuleAction.getProstheticAst(). Tables generated for grammars
         // without %Recover symbols use this default, which selects slot 0.
