@@ -19,7 +19,9 @@ jobs:
           dotnet-version: "8.0.x"
       - name: Pack
         working-directory: LPG2.Runtime
-        run: dotnet pack -c Release -o "$RUNNER_TEMP/nuget-out"
+        run: |
+          # Two csproj files live here; pin the SDK library project.
+          dotnet pack LPG2.Runtime.csproj -c Release -o "$RUNNER_TEMP/nuget-out"
       - name: Push
         if: ${{ secrets.NUGET_API_KEY != '' }}
         env:
